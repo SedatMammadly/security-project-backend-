@@ -1,0 +1,27 @@
+version: '3.8'
+services:
+  security_service:
+    container_name: security
+    image: postgres:alpine
+    environment:
+      POSTGRES_USER: SECURITY
+      POSTGRES_PASSWORD: SECURITY
+      POSTGRES_DB: User
+    ports:
+      - '5437:5432'
+    volumes:
+      - securityData:/var/lib/postgresql/data
+  redis:
+    image: "redis:latest"
+    container_name: my-redis
+    ports:
+      - "6379:6379"
+    environment:
+      - REDIS_PASSWORD=redis1234
+      - REDIS_DISABLE_COMMANDS=FLUSHDB,FLUSHALL
+    volumes:
+      - redisData:/data
+
+volumes:
+  securityData: {}
+  redisData: {}

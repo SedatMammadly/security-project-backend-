@@ -1,0 +1,42 @@
+spring:
+   data:
+    redis:
+      host: localhost
+      port: 6379
+      client-type: lettuce
+      timeout: 60000
+      password: redis1234
+
+   application:
+    name: security-service
+   datasource:
+     url: jdbc:postgresql://localhost:5437/User
+     username: SECURITY
+     password: SECURITY
+   jpa:
+     show-sql: true
+     hibernate:
+       ddl-auto: update
+   mail:
+     host: smtp.gmail.com
+     port: 587
+     username: memmedlisedat033@gmail.com
+     password: ghfs orqj yyyf envz
+     properties:
+       mail.transport.protocol: smtp
+       mail.smtp.auth: true
+       mail.smtp.starttls.enable: true
+       mail.debug: true
+
+security:
+ key: "r06+JeCHASdSWsjl0isLgHc4UIg/aHNrFTmpLb6h895MmqwgzJmHkWiDYROcxKRs+VDeFf82MiH4e6kQNsoraQ=="
+refresh-token:
+  expiration: 2592000000
+
+verification-code:
+  expiration: 300000
+
+access-token:
+  expiration: 300000
+server:
+  port: 8081
